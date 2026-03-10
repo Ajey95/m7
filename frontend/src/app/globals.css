@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Utilities */
+  .glass-card {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+  }
+
+  /* Disable expensive blur on mobile — biggest GPU drain */
+  @media (max-width: 768px) {
+    .glass-card {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      background: rgba(15, 23, 42, 0.75);
+    }
+  }
+
+  .glass-highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+  }
+
+  /* Background Parallax Layer 1 (Gradients) */
+  .bg-nebula-parallax {
+    background-image: radial-gradient(
+        circle at 20% 30%,
+        rgba(6, 78, 59, 0.15) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        rgba(251, 146, 60, 0.08) 0%,
+        transparent 40%
+      );
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* --- SVG Background Pattern --- */
+  .bg-pattern-parallax {
+    position: fixed;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+    background-size: 100px;
+    background-repeat: repeat;
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* Hide heavy SVG background pattern on mobile */
+  @media (max-width: 768px) {
+    .bg-pattern-parallax {
+      display: none;
+    }
+  }
+
+  /* --- FIXED MARQUEE CSS --- */
+  .marquee-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    display: flex;
+    white-space: nowrap;
+  }
+
+  .marquee-wrapper {
+    display: flex;
+    width: max-content;
+    animation: marquee-slide 40s linear infinite;
+  }
+
+  .marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding-right: 4rem;
+    flex-shrink: 0;
+  }
+
+  .marquee-wrapper:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Interaction Fixes */
+  button,
+  a {
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+  }
+
+  /* --- REVEAL ON SCROLL ANIMATIONS --- */
+  .reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  }
+
+  .reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Staggered delays for grids */
+  .delay-100 {
+    transition-delay: 100ms;
+  }
+  .delay-200 {
+    transition-delay: 200ms;
+  }
+  .delay-300 {
+    transition-delay: 300ms;
+  }
+  .delay-400 {
+    transition-delay: 400ms;
+  }
+}

@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+
+.venv
+env/
+dist/
+build/
+*.egg-info/
+
+# Node.js
+node_modules/
+
+npm-debug.log
+yarn-error.log
+.next/
+out/
+
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+android/local.properties
+.idea/
+*.iml
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+tmp/
+frontend_old/
+

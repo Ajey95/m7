@@ -1,0 +1,47 @@
+# ---- Dependencies ----
+node_modules
+
+# ---- Build output (rebuilt by Vercel) ----
+.next
+
+# ---- Source control ----
+.git
+.gitignore
+
+# ---- Environment / secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Tests & coverage ----
+__tests__
+test
+coverage
+jest.config.mjs
+jest.setup.ts
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# ---- IDE / editor ----
+.vscode
+.idea
+*.swp
+*~
+
+# ---- Documentation ----
+README.md
+CHANGELOG.md
+docs
+
+# ---- Other monorepo folders (not needed by Vercel) ----
+../backend
+../mobile
+../mobile-ngo
+../mobile-volunteer
+../database
+
+# ---- OS junk ----
+Thumbs.db
+.DS_Store

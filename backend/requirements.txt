@@ -1,0 +1,69 @@
+# Core Framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.6
+
+# Database
+sqlalchemy>=2.0.25
+psycopg[binary]>=3.1.0
+psycopg2-binary>=2.9.9
+geoalchemy2>=0.14.3
+shapely>=2.0.2
+
+# Authentication
+pyjwt>=2.8.0
+cryptography>=42.0.0
+python-jose[cryptography]>=3.3.0
+
+# Redis for caching
+redis>=5.0.1
+hiredis>=2.3.2
+
+# Validation & Schemas
+pydantic>=2.5.3
+pydantic-settings>=2.1.0
+email-validator>=2.1.0
+
+# Password hashing
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.0.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Date/Time utilities
+python-dateutil>=2.8.2
+
+# QR Code generation
+qrcode[pil]>=7.4.2
+
+# WebSocket support
+websockets>=12.0
+python-socketio>=5.11.0
+
+# HTTP requests
+httpx>=0.26.0
+requests>=2.31.0
+
+# Firebase Cloud Messaging (push notifications)
+firebase-admin==6.4.0
+
+# ─────────────────────────────────────────────────────
+# ANALYTICS & ML LIBRARIES (new — US1-US15)
+# ─────────────────────────────────────────────────────
+# Core scientific stack
+numpy>=1.26.0
+pandas==2.2.0
+
+# ML models (US1 Linear Reg, US3 K-Means, US4 Logistic Reg, US8 Isolation Forest, US15 Ridge)
+scikit-learn==1.4.0
+
+# Time-series forecasting (US2 Holt-Winters demand forecast)
+statsmodels==0.14.1
+
+# NLP Sentiment Analysis — pre-trained, no API key (US14 VADER)
+vaderSentiment==3.3.2
+
+# Testing
+pytest>=7.4.4
+pytest-asyncio>=0.23.3

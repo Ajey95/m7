@@ -1,0 +1,45 @@
+# ---- Git ----
+.git
+.gitignore
+
+# ---- Python caches ----
+__pycache__
+*.py[cod]
+*.pyo
+.pytest_cache
+*.egg-info
+dist
+build
+
+# ---- Virtual environments ----
+venv
+.venv
+env
+
+# ---- Environment / secrets ----
+.env
+.env.*
+
+# ---- IDE / editor ----
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# ---- Docker ----
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# ---- Test artifacts ----
+results.xml
+htmlcov
+.coverage
+
+# ---- Uploads (runtime volume, not baked in) ----
+uploads/*
+
+# ---- OS junk ----
+Thumbs.db
+.DS_Store
